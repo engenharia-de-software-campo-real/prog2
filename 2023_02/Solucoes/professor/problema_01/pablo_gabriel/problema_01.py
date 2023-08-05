@@ -1,1 +1,3 @@
-print('Meu primeiro programa nessa aula super da hora')
+print('Insira um numero inteiro:')
+numero = input()
+print (numero)
