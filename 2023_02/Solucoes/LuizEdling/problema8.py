@@ -1,0 +1,6 @@
+A = int(input('Digite o valor para A'))
+B = int(input('Digite o valor para B'))
+C = int(input('Digite o valor para C'))
+D = int(input('Digite o valor para D'))
+DIFERENÇA = (A*B)-(C*D)
+print(f'DIFERENÇA = {DIFERENÇA}')
