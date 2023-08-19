@@ -1,8 +1,9 @@
 def saudacao(nome):
+     
+     print("Olá, " + str(nome))
+    
 
-    string_retornada = "Olá, " + nome
-    return string_retornada
 
-nome_usuario = str(input("Digite um nome: "))
+parametro_pre = str(input("nome: "))
 
-saudacao(nome_usuario)
+saudacao(parametro_pre)
