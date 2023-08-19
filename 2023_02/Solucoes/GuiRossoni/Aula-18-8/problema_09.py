@@ -1,2 +1,9 @@
-#Funções Aninhadas e Closures
-#Escreva uma função fora que tenha uma função dentro aninhada. A função dentro deve imprimir uma mensagem. Então, faça a função fora retornar a função dentro.
+def funcao_fora():
+    def funcao_dentro():
+        print("Eu estou dentro da funcao_dentro")
+        
+    return funcao_dentro
+
+funcao_aninhada = funcao_fora()
+
+funcao_aninhada()
