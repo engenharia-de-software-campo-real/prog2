@@ -11,10 +11,17 @@ def main():
 
     numero_usuario = int(input("Digite o numero que eu estou pensando: "))
 
-    if numero_usuario == NUMERO_PRA_ADIVINHAR:
+    verifica_chute(numero_usuario)
+    
+
+# declaracao de funcoes
+def verifica_chute(numero_do_chute):
+    
+    if numero_do_chute == NUMERO_PRA_ADIVINHAR:
         print("Você Acertou!!")
     else:
-        print("Você Errou!!")
+        print("Você errou!!!")
+
 
 # incializador do programa
 if __name__ == '__main__':
