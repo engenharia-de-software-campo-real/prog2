@@ -3,14 +3,12 @@ import random
 NUM_DIGITS = 3
 MAX_GUESSES = 10 
 
-
-
-lista_numeros = [random.randint(0, 9) for _ in range(3)]
+lista_numeros = [random.randint(0, 9) for _ in range(3)] #GERADOR DE NUMEROS ALEATORIOS
 lista_numeros_str = ''.join(map(str, lista_numeros))
 
 NUM = lista_numeros_str
 
-print("Debug: " ,NUM)
+print("Debug resposta: " ,NUM)
 
 def main():
     print(''' 
@@ -31,7 +29,7 @@ def main():
     
     while True:
         
-        controle_de_tentativas += 1
+        controle_de_tentativas += 1 #CONTADOR DE TENTATIVAS
         
         numero_secreto = str(input("\nDigite um numero de tres digitos: "))
         print("\n")
@@ -44,10 +42,11 @@ def main():
             break
         
         if verifica_igualdade(numero_secreto) == True:
-            print("\nVoce acertou o numero secreto\n")
+            print("\nVoce acertou o numero secreto!\n")
             break
+        
         if not verifica_igualdade(numero_secreto):
-            print("\nVoce errou o numero secreto\n")
+            print("\nVoce errou o numero secreto!\n")
     
 def posicao_dos_numeros(numero_secreto): #COMPARADOR PARA OS NUMEROS INFORMADOS E PRESENTES NA VARIAVEM NUM
     for i in range(len(numero_secreto)):
@@ -64,12 +63,14 @@ def verifica_numero(numero_secreto): #VERIFICADOR ADIGIONAL PARA ENTRADAS MENORE
     if len(numero_secreto) != NUM_DIGITS:
         print("\nO numero precisa conter 3 digitos!")
         return False
+    
     else:
         return True
     
 def verifica_igualdade(numero_secreto): #VERIFICADOR PARA COMPARAR O NUMERO INFORMADO COM A VARIAVEL NUM
     if numero_secreto == NUM:
         return True   
+    
     else:
         return False
         
