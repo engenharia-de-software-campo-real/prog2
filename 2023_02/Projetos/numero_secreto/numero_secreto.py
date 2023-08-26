@@ -6,23 +6,23 @@ NUM = 145 #exemplo mais simples
 
 def main():
     print(''' 
-          Número Secreto é um jogo de Adivinhação!
+          NÃºmero Secreto Ã© um jogo de AdivinhaÃ§Ã£o!
           
-          Estou pensando em um número com {} dígitos com números não repetidos. 
-          Você tem {} tentativas!
-          Tente adivinhar qual é o número. Aqui vão algumas dicas:
+          Estou pensando em um nÃºmero com {} dÃ­gitos com nÃºmeros nÃ£o repetidos. 
+          VocÃª tem {} tentativas!
+          Tente adivinhar qual Ã© o nÃºmero. Aqui vÃ£o algumas dicas:
           Quando eu digo:   Isso significa:
-          Pico              Um dígito está correto mas na posição errada
-          Fermi             Um dígito está correto e na posição correta
-          Bagels            Nenhum dígito está correto
+          Pico              Um dÃ­gito estÃ¡ correto mas na posiÃ§Ã£o errada
+          Fermi             Um dÃ­gito estÃ¡ correto e na posiÃ§Ã£o correta
+          Bagels            Nenhum dÃ­gito estÃ¡ correto
 
-          Por exemplo, se o número secreto for 248 e seu chute for 843, a dica será
+          Por exemplo, se o nÃºmero secreto for 248 e seu chute for 843, a dica serÃ¡
           Fermi Pico.'''.format(NUM_DIGITS, MAX_GUESSES))
     
     controle_de_execucao = 0
 
     while True:
-        numero_do_usuario = str(input("Digite um numero com três digitos: "))
+        numero_do_usuario = str(input("Digite um numero com trÃªs digitos: "))
 
         controle_de_execucao += 1
 
