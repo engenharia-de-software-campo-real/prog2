@@ -1,16 +1,18 @@
+import math
 # definicao de uma funcao main
 def main():
     # o programa fica aqui dentro 
 
-    peso = input("Digigite o seu peso : ")
-    altura = input("Digite a sua altura: ")
-    calcula_imc(peso, altura)
+    peso = float(input("Digigite o seu peso : "))
+    altura = float(input("Digite a sua altura: "))
 
-    print(calcula_imc)    
+    imc = calcula_imc(peso, altura)
+
+    print(imc)
 
 # nossas próprias funcoes
 def calcula_imc(peso, altura):
-    imc = peso / (altura ** 2) 
+    imc = peso / pow(altura, 2)
     return imc
 
 # verificador pra rodar o programa
