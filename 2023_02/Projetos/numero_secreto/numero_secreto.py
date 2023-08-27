@@ -21,6 +21,8 @@ def main():
     
     controle_de_execucao = 0
 
+    pega_numero_aleatorio()
+
     while True:
         numero_do_usuario = str(input("Digite um numero com três digitos: "))
 
@@ -49,6 +51,29 @@ def verifica_igualdade(numero):
     else:
         print("voce errou")
 
+def pega_numero_aleatorio():
+
+    numeros = list('0123456789')
+    random.shuffle(numeros)
+    
+    numero_secreto = ''
+    for i in range(NUM_DIGITS):
+        numero_secreto += str(numeros[i])
+
+    return numero_secreto
+
+def pega_dicas(chute, numero_secreto):
+    if chute == numero_secreto:
+        return "Você Venceu!"
+    
+    dicas = []
+
+    for i in range(len(chute)):
+        if chute[i] == numero_secreto[i]:
+            dicas.append('Fermi')
+
+        elif chute[i] in numero_secreto:
+            
 
 # voces nao precisam entender o porque disso, soh precisa ter, aceitem!
 if __name__ == '__main__':
