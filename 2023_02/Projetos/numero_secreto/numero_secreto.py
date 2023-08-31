@@ -2,7 +2,6 @@ import random #importando uma biblioteca
 
 NUM_DIGITS = 3 
 MAX_GUESSES = 10 
-NUM = 145 #exemplo mais simples
 
 def main():
     print(''' 
@@ -19,37 +18,32 @@ def main():
           Por exemplo, se o número secreto for 248 e seu chute for 843, a dica será
           Fermi Pico.'''.format(NUM_DIGITS, MAX_GUESSES))
     
-    controle_de_execucao = 0
-
-    pega_numero_aleatorio()
-
     while True:
-        numero_do_usuario = str(input("Digite um numero com três digitos: "))
+        numero_secreto = pega_numero_aleatorio()
+        print('Eu pensei em um número')
+        print('Você tem {} chances para tentar acertar.'.format(MAX_GUESSES))
 
-        controle_de_execucao += 1
+        numero_de_chutes = 1
+        while numero_de_chutes <= MAX_GUESSES:
+            chute = ''
+            while len(chute) != NUM_DIGITS or not chute.isdecimal():
+                print('Chute #{}: '.format(numero_de_chutes))
+                chute = input('> ')
 
-        if verifica_numero_valido(numero_do_usuario):
-            verifica_igualdade(numero_do_usuario)
-        
-        if controle_de_execucao > MAX_GUESSES:
+            dicas  = pega_dicas(chute, numero_secreto)
+            print(dicas)
+            numero_de_chutes += 1
+
+            if chute == numero_secreto:
+                break 
+            if numero_de_chutes > MAX_GUESSES:
+                print('Voce esgotou suas tentativas: ')
+                print('A resposta era {}.'.format(numero_secreto))
+            
+        print('Você quer jogar de novo?! (sim ou nao)')
+        if not input('> ').lower().startswith('y'):
             break
-
-        #como verificar as posicoes dos numeros do usuario com o numero pra adivinhar?
-    
-# defino todas minhas funcoes 
-def verifica_numero_valido(numero):
-    if len(numero) == 3:
-        # print("o numero eh valido")
-        return True
-    else:
-        # print("o numero nao eh valido")
-        return False
-
-def verifica_igualdade(numero):
-    if numero == NUM:
-        print("voce acertou")
-    else:
-        print("voce errou")
+    print('Obrigado por jogar!')
 
 def pega_numero_aleatorio():
 
@@ -73,6 +67,14 @@ def pega_dicas(chute, numero_secreto):
             dicas.append('Fermi')
 
         elif chute[i] in numero_secreto:
+            dicas.append('Pico')
+
+    if len(dicas) == 0:
+        return 'Bagels'
+    else:
+        dicas.sort()
+
+        return ' '.join(dicas)
             
 
 # voces nao precisam entender o porque disso, soh precisa ter, aceitem!
