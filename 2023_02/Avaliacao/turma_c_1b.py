@@ -1,6 +1,7 @@
 '''
 Avaliacao : 1 bimestre - Programacao 2 
 Professor: Pedro Lealdino Filho, PhD.
+Turma: C
 
 Integrantes do Grupo: 
 -
