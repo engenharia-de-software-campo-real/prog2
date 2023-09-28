@@ -82,4 +82,3 @@ main()
 # if __name__ == '__main__':
 #     main()
 main.py
-Exibindo main.py…
